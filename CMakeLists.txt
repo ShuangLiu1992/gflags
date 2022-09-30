@@ -99,6 +99,8 @@ set (PACKAGE_DESCRIPTION "A commandline flags library that allows for distribute
 set (PACKAGE_URL         "http://gflags.github.io/gflags")
 
 project (${PACKAGE_NAME} VERSION ${PACKAGE_VERSION} LANGUAGES CXX)
+include(conanbuildinfo.cmake)
+conan_basic_setup()
 if (CMAKE_VERSION VERSION_LESS 3.4)
   # C language still needed because the following required CMake modules
   # (or their dependencies, respectively) are not correctly handling
