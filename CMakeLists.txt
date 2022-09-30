@@ -70,11 +70,7 @@
 ## - GFLAGS_INSTALL_SHARED_LIBS
 ## - GFLAGS_INSTALL_STATIC_LIBS
 
-cmake_minimum_required (VERSION 3.0.2 FATAL_ERROR)
-
-if (POLICY CMP0042)
-  cmake_policy (SET CMP0042 NEW)
-endif ()
+cmake_minimum_required (VERSION 3.22 FATAL_ERROR)
 
 if (POLICY CMP0048)
   cmake_policy (SET CMP0048 NEW)
@@ -99,8 +95,7 @@ set (PACKAGE_DESCRIPTION "A commandline flags library that allows for distribute
 set (PACKAGE_URL         "http://gflags.github.io/gflags")
 
 project (${PACKAGE_NAME} VERSION ${PACKAGE_VERSION} LANGUAGES CXX)
-include(conanbuildinfo.cmake)
-conan_basic_setup()
+
 if (CMAKE_VERSION VERSION_LESS 3.4)
   # C language still needed because the following required CMake modules
   # (or their dependencies, respectively) are not correctly handling
